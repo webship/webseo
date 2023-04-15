@@ -1,0 +1,21 @@
+name: Web SEO
+type: module
+description: 'Most needed contributed modules and configurations for search engine optimization.'
+core_version_requirement: ~10.0
+dependencies:
+  - metatag:metatag
+  - metatag:metatag_mobile
+  - metatag:metatag_open_graph
+  - metatag:metatag_twitter_cards
+  - metatag:metatag_verification
+  - pathauto:pathauto
+  - redirect:redirect
+  - redirect:redirect_404
+  - redirect:redirect_domain
+  - schema_metatag:schema_metatag
+  - schema_metatag:schema_article
+  - schema_metatag:schema_item_list
+  - schema_metatag:schema_web_page
+  - schema_metatag:schema_web_site
+  - xmlsitemap:xmlsitemap
+  - yoast_seo:yoast_seo 
