@@ -18,4 +18,5 @@ dependencies:
   - schema_metatag:schema_web_page
   - schema_metatag:schema_web_site
   - xmlsitemap:xmlsitemap
-  - yoast_seo:yoast_seo 
+  - yoast_seo:yoast_seo
+  - google_analytics:google_analytics 
