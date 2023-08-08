@@ -1,7 +1,7 @@
 name: Web SEO
 type: module
 description: 'Most needed contributed modules and configurations for search engine optimization.'
-core_version_requirement: ~10.0
+core_version_requirement: ~10.1.0
 dependencies:
   - metatag:metatag
   - metatag:metatag_mobile
