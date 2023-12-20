@@ -23,13 +23,15 @@
     }
   },
   "require": {
-    "drupal/core": "~10.1.0",
-    "drupal/metatag": "~1.0",
-    "drupal/schema_metatag": "~2.0",
+    "drupal/core": "~10.2.0",
+    "drupal/webpatches": "~10.0",
+    "drupal/metatag": "~2.0.0",
+    "drupal/schema_metatag": "~3.0.0",
     "drupal/pathauto": "~1.0",
-    "drupal/yoast_seo": "~1.0",
+    "drupal/yoast_seo": "~2.0",
     "drupal/redirect": "~1.0",
     "drupal/xmlsitemap": "~1.0",
-    "drupal/google_analytics":"~4.0.0"
+    "drupal/google_analytics": "~4.0.0",
+    "drupal/google_tag": "~2.0.0"
   }
 }
