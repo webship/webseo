@@ -23,7 +23,7 @@
     }
   },
   "require": {
-    "drupal/core": "~11.0.0",
+    "drupal/core": "~11.1.0",
     "drupal/webpatches": "11.0.x-dev",
     "drupal/metatag": "~2.1.0",
     "drupal/schema_metatag": "~3.0.0",
