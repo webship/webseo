@@ -1,0 +1,33 @@
+name: Web SEO - Default
+description: A recipe to manage default installed modules, configs and permissions.
+type: install
+install:
+  - metatag
+  - metatag_mobile
+  - metatag_open_graph
+  - metatag_twitter_cards
+  - metatag_verification
+  - pathauto
+  - redirect
+  - redirect_404
+  - redirect_domain
+  - schema_metatag
+  - schema_article
+  - schema_item_list
+  - schema_web_page
+  - schema_web_site
+  - xmlsitemap
+  - yoast_seo
+  - google_analytics
+  - google_tag
+config:
+  strict: false
+  import:
+    metatag: '*'
+    pathauto: '*'
+    redirect: '*'
+    schema_metatag: '*'
+    xmlsitemap: '*'
+    yoast_seo: '*'
+    google_analytics: '*'
+    google_tag: '*'
