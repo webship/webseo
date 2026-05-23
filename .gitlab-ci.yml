@@ -102,6 +102,11 @@ stylelint:
     # ── Module install ──────────────────────────────────────────────────────
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT en webseo -y
     - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT cache:rebuild
+    # xmlsitemap only generates the XML files on cron — without this, the
+    # `/sitemap.xml` endpoint 404s on a fresh install (xmlsitemap_install()
+    # only marks regenerate_needed; the actual file is written by
+    # xmlsitemap_cron() or by an explicit regenerate command).
+    - $CI_PROJECT_DIR/vendor/bin/drush --root=$CI_PROJECT_DIR/$_WEB_ROOT xmlsitemap:regenerate -y
     # Per-role test users are provisioned by the first scenario in the suite
     # (01-01-01-users-login.feature, "Webmaster can log in and provision
     # testing users"), so no separate drush step is needed here.
