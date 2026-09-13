@@ -25,11 +25,13 @@
   "require": {
     "drupal/core": "^11.4 || ^12",
     "drupal/webpatches": "11.0.x-dev",
+    "drupal/easy_breadcrumb": "^2.0.9",
     "drupal/metatag": "~2.2.0",
     "drupal/schema_metatag": "~3.0.0",
-    "drupal/pathauto": "~1.0",
+    "drupal/pathauto": "^1.13",
+    "drupal/token": "^1.15",
     "drupal/yoast_seo": "~2.0",
-    "drupal/redirect": "~1.0",
+    "drupal/redirect": "^1.10",
     "drupal/xmlsitemap": "~2.0",
     "drupal/google_analytics": "~4.0.0",
     "drupal/google_tag": "~2.0.0"

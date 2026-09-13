@@ -1,33 +1,74 @@
 name: Web SEO - Default
 description: A recipe to manage default installed modules, configs and permissions.
 type: install
+recipes:
+  # Permissions below are granted to the content editor role.
+  - core/recipes/content_editor_role
 install:
+  - easy_breadcrumb
+  - google_analytics
+  - google_tag
+  - language
   - metatag
   - metatag_mobile
   - metatag_open_graph
   - metatag_twitter_cards
   - metatag_verification
+  - node
   - pathauto
   - redirect
   - redirect_404
   - redirect_domain
-  - schema_metatag
   - schema_article
   - schema_item_list
+  - schema_metatag
   - schema_web_page
   - schema_web_site
+  - shortcut
+  - token
+  - user
+  - views
   - xmlsitemap
   - yoast_seo
-  - google_analytics
-  - google_tag
 config:
-  strict: false
+  # Only the bundled menu path pattern is treated strictly.
+  strict:
+    - pathauto.pattern.menu_path
   import:
-    metatag: '*'
-    pathauto: '*'
-    redirect: '*'
-    schema_metatag: '*'
-    xmlsitemap: '*'
-    yoast_seo: '*'
     google_analytics: '*'
     google_tag: '*'
+    metatag: '*'
+    pathauto: '*'
+    # All redirect config, including the redirect content language settings
+    # and the redirect delete action.
+    redirect: '*'
+    redirect_404: '*'
+    schema_metatag: '*'
+    shortcut:
+      - shortcut.set.default
+    xmlsitemap: '*'
+    yoast_seo: '*'
+  actions:
+    easy_breadcrumb.settings:
+      simpleConfigUpdate:
+        # Don't add the current page in the admin UI.
+        applies_admin_routes: false
+        # Add Schema.org BreadcrumbList markup.
+        add_structured_data_json_ld: true
+        # Hide breadcrumbs when only the home item appears.
+        hide_single_home_item: true
+        # Keep the capitalization of breadcrumbs.
+        capitalizator_mode: none
+    redirect_404.settings:
+      simpleConfigUpdate:
+        suppress_404: true
+    system.performance:
+      simpleConfigUpdate:
+        # Cache pages for 15 minutes.
+        cache.page.max_age: 900
+        # Aggregate CSS and JavaScript.
+        css.preprocess: true
+        js.preprocess: true
+    user.role.content_editor:
+      # Let content editors manage redirects.
+      grantPermission: 'administer redirects'
