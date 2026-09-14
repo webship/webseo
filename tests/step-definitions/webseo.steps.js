@@ -143,6 +143,20 @@ Then(/^the page link rel "([^"]+)" should exist$/, async function (rel) {
 });
 
 /**
+ * Assert that the browser title is not empty and does not start with a separator.
+ *
+ * Example #1: Then the page title should not start with "|"
+ */
+Then(/^the page title should not start with "([^"]+)"$/, async function (prefix) {
+  await attempt(async () => {
+    const title = (await this.page.title()).trim();
+    if (title === '' || title.startsWith(prefix)) {
+      throw new Error(`The page title is "${title}"`);
+    }
+  }, `Expected a page title that does not start with "${prefix}"`);
+});
+
+/**
  * Assert that the response of a path is the given HTTP status code.
  *
  * Example #1: Then the response status of "/sitemap.xml" should be 200

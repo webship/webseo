@@ -28,6 +28,8 @@ install:
   - token
   - user
   - views
+  # Web SEO itself: pages without a title keep a browser title.
+  - webseo
   - xmlsitemap
   - yoast_seo
 config:
@@ -59,6 +61,15 @@ config:
         hide_single_home_item: true
         # Keep the capitalization of breadcrumbs.
         capitalizator_mode: none
+    # Give the front page a title of its own, so a front page without a title
+    # does not render the browser title as "| Site name".
+    metatag.metatag_defaults.front:
+      set:
+        property_name: tags
+        value:
+          title: '[site:name]'
+          canonical_url: '[site:url]'
+          shortlink: '[site:url]'
     redirect_404.settings:
       simpleConfigUpdate:
         suppress_404: true
