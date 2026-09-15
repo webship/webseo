@@ -24,7 +24,6 @@
   },
   "require": {
     "drupal/core": "^11.4 || ^12",
-    "drupal/webpatches": "11.0.x-dev",
     "drupal/easy_breadcrumb": "^2.0.9",
     "drupal/metatag": "~2.2.0",
     "drupal/schema_metatag": "~3.0.0",
