@@ -1,6 +1,6 @@
-Feature: Breadcrumbs, redirects view and the redirect shortcut
+Feature: Breadcrumbs and the redirects view
   As a site editor
-  I want breadcrumb schema markup, a redirects list and a redirect shortcut
+  I want breadcrumb schema markup, and a redirects list
   So that pages are indexed well and redirects are quick to manage
 
   Scenario: A page exposes the breadcrumb schema markup
@@ -18,8 +18,3 @@ Feature: Breadcrumbs, redirects view and the redirect shortcut
     Given I am a logged in user with the "Content editor" user
     When I navigate to "/admin/config/search/redirect"
     Then I should see "There are no redirects yet."
-
-  Scenario: The default shortcut set has the redirect shortcut
-    Given I am a logged in user with the "Webmaster" user
-    When I navigate to "/admin/config/user-interface/shortcut/manage/default/customize"
-    Then I should see "Set up a redirect"

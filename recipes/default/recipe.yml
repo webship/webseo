@@ -24,7 +24,6 @@ install:
   - schema_metatag
   - schema_web_page
   - schema_web_site
-  - shortcut
   - token
   - user
   - views
@@ -46,8 +45,6 @@ config:
     redirect: '*'
     redirect_404: '*'
     schema_metatag: '*'
-    shortcut:
-      - shortcut.set.default
     xmlsitemap: '*'
     yoast_seo: '*'
   actions:
