@@ -67,6 +67,16 @@ config:
           title: '[site:name]'
           canonical_url: '[site:url]'
           shortlink: '[site:url]'
+    # The content types of the Webship site templates keep their summary in
+    # field_summary and have no body summary, so Metatag's default description
+    # of [node:summary] is always empty and no node page gets a description tag.
+    metatag.metatag_defaults.node:
+      set:
+        property_name: tags
+        value:
+          title: '[node:title] | [site:name]'
+          description: '[node:field_summary]'
+          canonical_url: '[node:url]'
     redirect_404.settings:
       simpleConfigUpdate:
         suppress_404: true

@@ -16,3 +16,7 @@ Feature: Metatag admin pages
     Then I should see a "Page title" field
      And I should see a "Description" field
      And I should see the button "Save"
+
+  Scenario: The Content defaults take the description from the summary field
+    When I navigate to "/admin/config/search/metatag/node"
+    Then "#edit-description" should have value "[node:field_summary]"
