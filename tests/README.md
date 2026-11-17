@@ -9,7 +9,7 @@ project root holds the configuration.
 
 | Folder | What it holds |
 | --- | --- |
-| `features/` | the features (13 files, 32 scenarios) |
+| `features/` | the features (13 files, 33 scenarios) |
 | `step-definitions/` | this project's own steps |
 | `selectors/` | named selectors for the administration themes |
 | `reports/`, `screenshots/`, `videos/` | what a run writes (not committed) |
