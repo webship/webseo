@@ -7,9 +7,8 @@ Feature: Schema.org Metatag bundled submodules
     Given I am a logged in user with the "Webmaster" user
 
   Scenario: Schema.org submodules show up on the modules page
-    When I navigate to "/admin/modules"
-    Then I should see "Schema.org Metatag"
-     And I should see "Schema.org Article"
-     And I should see "Schema.org ItemList"
-     And I should see "Schema.org WebPage"
-     And I should see "Schema.org WebSite"
+    Then the "schema_metatag" module should be installed
+     And the "schema_article" module should be installed
+     And the "schema_item_list" module should be installed
+     And the "schema_web_page" module should be installed
+     And the "schema_web_site" module should be installed

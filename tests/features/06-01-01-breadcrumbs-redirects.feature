@@ -3,6 +3,10 @@ Feature: Breadcrumbs and the redirects view
   I want breadcrumb schema markup, and a redirects list
   So that pages are indexed well and redirects are quick to manage
 
+  # The JSON-LD comes with the breadcrumb block: it needs a front-end theme that
+  # places that block (Olivero on the Standard profile does; the pages of the
+  # Webship Starter template have no breadcrumb).
+  @breadcrumb-block
   Scenario: A page exposes the breadcrumb schema markup
     Given I am an anonymous user
     When I navigate to "/user/login"

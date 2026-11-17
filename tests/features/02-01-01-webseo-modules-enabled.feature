@@ -7,13 +7,12 @@ Feature: Web SEO bundled modules are enabled
     Given I am a logged in user with the "Webmaster" user
 
   Scenario: Modules report status page lists Web SEO as enabled
-    When I navigate to "/admin/modules"
-    Then I should see "Web SEO"
-     And I should see "Metatag"
-     And I should see "Pathauto"
-     And I should see "Redirect"
-     And I should see "XML Sitemap"
-     And I should see "Real-time SEO"
-     And I should see "Google Analytics"
-     And I should see "Google Tag"
-     And I should see "Schema.org Metatag"
+    Then the "webseo" module should be installed
+     And the "metatag" module should be installed
+     And the "pathauto" module should be installed
+     And the "redirect" module should be installed
+     And the "xmlsitemap" module should be installed
+     And the "yoast_seo" module should be installed
+     And the "google_analytics" module should be installed
+     And the "google_tag" module should be installed
+     And the "schema_metatag" module should be installed
