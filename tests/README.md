@@ -65,10 +65,10 @@ yarn test --tags "not @wip and not @breadcrumb-block"
 protects with a time limit; a site without it needs none.
 `NODE_EXTRA_CA_CERTS` lets Node.js trust DDEV's HTTPS certificate for the
 steps that send a request outside the browser.
-`@breadcrumb-block` marks the scenario that reads the breadcrumb's JSON-LD:
-it needs a front-end theme that places the breadcrumb block, which the
-Webship Starter pages do not have, so the run on a Webship site leaves it
-out (CI runs it on Olivero).
+`@breadcrumb-block` marks the scenario that reads the breadcrumb's JSON-LD on
+the log in page: the page needs to show the breadcrumb, which the sign-in
+screen of the Webship Starter template does not, so the run on a Webship site
+leaves it out (CI runs it on Olivero).
 `yarn test:dry` checks that every step resolves to one definition, without
 a browser.
 

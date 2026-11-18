@@ -176,3 +176,38 @@ Then(/^the JSON-LD on the page should contain a "([^"]+)" node$/, async function
     }
   }, `Expected JSON-LD on the page to contain a "${type}" node`);
 });
+
+/**
+ * Assert how many JSON-LD nodes of a given @type the page holds, so a node
+ * printed twice is caught.
+ *
+ * Example #1: Then the JSON-LD on the page should contain 1 "BreadcrumbList" node
+ * Example #2: Then the JSON-LD on the page should contain 2 "ListItem" nodes
+ */
+Then(/^the JSON-LD on the page should contain (\d+) "([^"]+)" nodes?$/, async function (count, type) {
+  await attempt(async () => {
+    const scripts = await this.page.locator('script[type="application/ld+json"]').allTextContents();
+    const is = (node) => node && (node['@type'] === type || (Array.isArray(node['@type']) && node['@type'].includes(type)));
+    let found = 0;
+    for (const raw of scripts) {
+      try {
+        const data = JSON.parse(raw);
+        for (const item of Array.isArray(data) ? data : [data]) {
+          if (is(item)) {
+            found += 1;
+          }
+          for (const node of Array.isArray(item['@graph']) ? item['@graph'] : []) {
+            if (is(node)) {
+              found += 1;
+            }
+          }
+        }
+      } catch (e) {
+        // ignore malformed JSON-LD blocks
+      }
+    }
+    if (found !== Number(count)) {
+      throw new Error(`Found ${found} JSON-LD node(s) with @type="${type}", expected ${count}`);
+    }
+  }, `Expected the JSON-LD on the page to contain ${count} "${type}" node(s)`);
+});

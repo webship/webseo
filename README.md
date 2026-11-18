@@ -10,7 +10,10 @@ Most needed contributed modules and configurations for search engine optimizatio
   Google Tag.
 - The description meta tag of a node is its `field_summary`, the summary field
   of the Webship content types.
-- Breadcrumbs (Easy Breadcrumb) with Schema.org `BreadcrumbList` markup.
+- Breadcrumbs (Easy Breadcrumb) with Schema.org `BreadcrumbList` markup. Easy
+  Breadcrumb adds it in the template of the breadcrumb block, which a Display
+  Builder page layout does not use: Web SEO adds it to the pages a page layout
+  draws with the breadcrumb, once.
 - URL aliases with Pathauto and the "Menu Path" pattern.
 - Redirects, the redirects admin view and redirect 404 handling. Content
   editors can administer redirects.
